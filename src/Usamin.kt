@@ -2,11 +2,9 @@ val USA = "ウサ"
 val MIN = "ミン"
 
 fun main(args: Array<String>) {
-    3 * {
-        println("${MIN * 3} ${MIN * 3}")
-        println("$USA$MIN!")
+    4 * {
+        println("${ if (it < 3) Array(2) { MIN * 3 }.joinToString(" ") else USA * 3 } $USA$MIN!")
     }
-    println("${USA * 3} $USA$MIN!")
 }
 
 operator fun String.times(i: Int) = Array(i) { this }.joinToString("")
